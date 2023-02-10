@@ -6,7 +6,7 @@
 }
 body {
   align-items: center;
-  background: #D8AA96;
+  background: #0c4b53;
   color: rgba(0, 0, 0, 0.8);
   display: grid;
   font-family: 'Montserrat', sans-serif;
@@ -19,10 +19,10 @@ body {
 .signup-container {
   display: grid;
   grid-template-areas: "left right";
-  max-width: 900px;
+  max-width: 9000px;
 }
 .left-container {
-  background: #807182;
+  background: #568ece;
   overflow: hidden;
   padding: 40px 0 0 0;
   position: relative;
@@ -35,9 +35,9 @@ body {
   font-size: 24px;
 }
 .left-container h1 i {
-  background: #F7B1AB;
+  background: #0b1520;
   border-radius: 50%;
-  color: #807182;
+  color: #1a749b;
   font-size: 24px;
   margin-right: 5px;
   padding: 10px;
@@ -49,7 +49,7 @@ body {
   text-align: center;
 }
 .left-container .puppy:before {
-  background: #807182;
+  background: #251f7a;
   content: "";
   height: 100%;
   left: 0;
@@ -63,10 +63,10 @@ body {
   width: 70%;
 }
 .right-container {
-  background: #f9c7c2;
+  background: #395fa5;
   display: grid;
   grid-template-areas: "." ".";
-  width: 500px;
+  width: 800px;
 }
 .right-container h1:nth-of-type(1) {
   color: rgba(0, 0, 0, 0.8);
