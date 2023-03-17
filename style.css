@@ -16,11 +16,14 @@ body {
   justify-items: center;
   font-weight: 100vw;
 }
+
 .signup-container {
   display: grid;
   grid-template-areas: "left right";
   max-width: 9000px;
+  height: 98vh;
 }
+
 .left-container {
   background: #568ece;
   overflow: hidden;
@@ -28,30 +31,23 @@ body {
   position: relative;
   text-align: center;
   width: 300px;
+  
 }
 
 
-
-.left-container .puppy:before {
-  background: #251f7a;
-  content: "";
-  height: 100%;
-  left: 0;
-  opacity: 0.4;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-}
 .left-container img {
   filter: sepia(100%);
   width: 70%;
+  height: 100%;
+  
   /*Filtre Gif*/
 }
 .right-container {
   background: #395fa5;
-  display: grid;
+  display: flex;
   grid-template-areas: "." ".";
-  width: 800px;
+  width: 1300px;
+  height: 100%;
   
 }
 
@@ -67,13 +63,14 @@ body {
   height: 38px;
   line-height: 38px;
   padding-left: 5px;
+  /*taille des boutons*/
 }
-
 
 .right-container header {
   padding: 40px;
 }
 
+/*
 
 .right-container footer {
   align-items: center;
@@ -89,7 +86,21 @@ body {
   border-radius: 19px;
   font-family: 'Montserrat', sans-serif;
 }
+*/
 
+.Prénom  label, .Nom label, .DateNaissance label, .NomBateau label,  .AdresseMail label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+  /* alignement des cases*/
+}
+
+.item {
+  background-image: url('chemin/vers/image.jpg');
+  background-size: cover;
+}
+/*
 .right-container footer #back:hover {
   background: #171A2B;
   color: white;
@@ -102,12 +113,34 @@ body {
 .right-container footer #next:hover {
   background: #171A2B;
 }
-.Prénom  label, .Nom label, .DateNaissance label, .NomBateau label,  .AdresseMail label {
-  display: block;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  font-weight: bold;
-  /* alignement des cases*/
+*/
+.boxright {
+  height: 100%;
+  width: 810px;
+  float: right;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 10px;
+
 }
 
+.boxleft {
+  height: 100%;
+  width: 400px;
+  float: left;
+  
+}
 
+.set {
+  width: 100%;
+  height: 60px;
+}
+
+footer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
