@@ -1,33 +1,36 @@
 <?php
 // Paramètres de connexion à la base de données
-$host = 'localhost';
+$host = '172.18.214.59';
 $username = 'ArmadaAdmin';
 $password = 'btssnir';
 $dbname = 'armada_projet';
 
-// Connexion à la base de données
-$conn = mysqli_connect($host, $username, $password, $dbname);
+if (!empty($_POST)) {
+    $user_nom = $_POST["user_nom"];
+    $user_prenom = $_POST["user_prenom"];
+    $user_datenaissance = $_POST["user_datenaissance"];
+    $user_adressemail = $_POST["user_adressemail"];
 
-// Vérifier la connexion
-if ($conn->connect_error) {
-    die("Connexion échouée: " . mysqli_connect_error());
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "INSERT INTO utilisateur (nom, prenom, dateDeNaissance, adresseMail) VALUES (:value1, :value2, :value3, :value4)";
+
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(":value1", $user_nom);
+        $statement->bindParam(":value2", $user_prenom);
+        $statement->bindParam(":value3", $user_datenaissance);
+        $statement->bindParam(":value4", $user_adressemail);
+        $statement->execute();
+        echo "Données insérées avec succès.";
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+
+    
 }
-echo "Connexion réussie";
-
-$user_nom = $_POST["user_nom"];
-$user_prenom = $_POST["user_prenom"];
-$user_datenaissance = $_POST["user_datenaissance"];
-$user_adressemail = $_POST["user_adressemail"];
-
-$reqUti = "INSERT INTO utilisateur (nom, prenom, dateDeNaissance, adresseMail) VALUES ('$user_nom', '$user_prenom', '$user_datenaissance', '$user_adressemail')";
-$reqRes = "INSERT INTO reservation (nom, prenom, dateDeNaissance, adresseMail) VALUES ('$user_nom', '$user_prenom', '$user_datenaissance', '$user_adressemail')";
-
-if ($conn->query($reqUti) === TRUE && $conn->query($reqRes) === TRUE) {
-    echo "Votre message a été envoyé avec succès.";
-} else {
-    echo "Erreur : " . $conn->error;
-}
-
-$conn->close();
 ?>
+
+
 

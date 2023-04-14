@@ -5,7 +5,7 @@
   padding: 0;
 }
 body {
-  align-items: center;
+  
   background: #0c4b53;
   color: rgba(0, 0, 0, 0.8);
   display: grid;
@@ -70,7 +70,7 @@ body {
   padding: 40px;
 }
 
-/*
+
 
 .right-container footer {
   align-items: center;
@@ -86,7 +86,7 @@ body {
   border-radius: 19px;
   font-family: 'Montserrat', sans-serif;
 }
-*/
+
 
 .Prénom  label, .Nom label, .DateNaissance label, .NomBateau label,  .AdresseMail label {
   display: block;
@@ -100,7 +100,7 @@ body {
   background-image: url('chemin/vers/image.jpg');
   background-size: cover;
 }
-/*
+
 .right-container footer #back:hover {
   background: #171A2B;
   color: white;
@@ -113,7 +113,7 @@ body {
 .right-container footer #next:hover {
   background: #171A2B;
 }
-*/
+
 .boxright {
   height: 100%;
   width: 810px;
